@@ -13,6 +13,7 @@ import warnings
 import webbrowser
 import smtplib
 import wolframalpha
+import requests
 import ecapture
 import email
 import re
@@ -136,7 +137,16 @@ while True:
             note(note_text)
             print('Note Taken')
 
-
+        if('weather' in text):
+            url = "https://api.ambeedata.com/weather/latest/by-lat-lng"
+            querystring = {"lat":"12.9889055","lng":"77.574044"}
+            headers = {
+                'x-api-key': "8b914883a697a6fd4d30b68f30d89bc1ff686608e0d48ec61f22078395475fcd",
+                'Content-type': "application/json"
+            }
+            response = requests.request("GET", url, headers=headers, params=querystring)
+            response = response + (response.text)
+            
 
         if('time' in text):
             now = datetime.datetime.now()
@@ -170,6 +180,7 @@ while True:
         if('Bye Iris' in text):
             quit()
            
+    
             
         assistantResponse(response)
 
