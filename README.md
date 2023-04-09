@@ -2,7 +2,7 @@ A python voice assistant.
 
 This project was initially a part of my startup idea, working on Augmented Reality glasses.
 
-Iriis is a very basic voice assistant that can perform tasks such as -
+Iriis is a very basic voice assistant that can perform tasks such as:
 
 - Tell you the time
 - Tell you the weather
